@@ -33,12 +33,25 @@ class HelloController extends Controller
 
     public function services(){
 
-        $services = [
+        // Models -> rep of data base tables
+        // Naming convention
+        /* 
+        Model - singular
+        Service
+
+        Table - plural
+        services
+        */
+        
+        /* $services = [
             'service 1',
             'service 2',
             'service 3',
             'service 4',
-        ];
+        ]; */
+
+        $services = \App\Service::all();
+        // dd($services);
 
         return view('services', compact('services'));
     }
